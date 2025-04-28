@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 enum EnvTupeEnum { dev, product }
@@ -20,5 +18,5 @@ class Envariablement {
   }
   _envType = dotenv.get('ENV_TYPE');
   }
-  
+  String get envType => _envType;
 }
