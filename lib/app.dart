@@ -1,3 +1,5 @@
+import 'package:ecommerce/core/app/connectevity_controller.dart';
+import 'package:ecommerce/core/common/screens/no_network_screen.dart';
 import 'package:flutter/material.dart';
 
 class StoreApp extends StatelessWidget {
@@ -5,23 +7,25 @@ class StoreApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'E-Commerce',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: Scaffold(
-        appBar: AppBar(title: const Text('E-Commerce')),
-        body: Center(
-          child: Column(
-            children: [
-              const Text('E-Commerce'),
-              Image.network(
-                'https://thaka.bing.com/th/id/OIP.t6C37bafhtP1vqma1eKvwAHaEK?w=286&h=180&c=7&r=0&o=5&pid=1.7',
-              ),
-            ],
-          ),
-        ),
-      ),
+    return ValueListenableBuilder(
+      valueListenable: ConnectevityController.instance.isConnected,
+      builder: (_, value, __) {
+        if (value) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: const Center(child: Text('Store App')),
+            builder: (context, widget) {
+              ConnectevityController.instance.init();
+              return SafeArea(child: widget!);
+            },
+          );
+        } else {
+          return const MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: NoNetworkScreen(),
+          );
+        }
+      },
     );
   }
 }
