@@ -34,7 +34,22 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_dotenv: ^5.2.1
+  flutter_launcher_icons: ^0.14.3
+  flutter_native_splash: ^2.4.6
   very_good_analysis: ^7.0.0
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/app_icon.jpg"
+  web:
+    generate: true
+    image_path: "assets/icons/app_icon.jpg"
+    background_color: "#ffffff"
+    theme_color: "#ffffff"
+  windows:
+    generate: true
+    image_path: "assets/icons/app_icon.jpg"
+    icon_size: 48
 
 dev_dependencies:
   flutter_lints: ^5.0.0
