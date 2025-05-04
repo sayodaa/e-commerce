@@ -1,6 +1,6 @@
 import 'package:ecommerce/core/app/connectevity_controller.dart';
 import 'package:ecommerce/core/common/screens/no_network_screen.dart';
-import 'package:ecommerce/core/styles/fonts/font_family_helper.dart';
+import 'package:ecommerce/core/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,30 +18,8 @@ class StoreApp extends StatelessWidget {
             minTextAdapt: true,
             child: MaterialApp(
               debugShowCheckedModeBanner: false,
-              home: const Scaffold(
-                body: Center(
-                  child: Column(
-                    children: [
-                      Text('عربي'),
-                      Text(
-                        'متجر',
-                        style: TextStyle(
-                          color: Colors.red,
-                          fontFamily: FontFamilyHelper.cairo,
-                        ),
-                      ),
-                      Text('english'),
-                      Text(
-                        'Store App',
-                        style: TextStyle(
-                          color: Colors.red,
-                          fontFamily: FontFamilyHelper.poppins,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              initialRoute: AppRoutes.test1,
+              onGenerateRoute: AppRoutes.onGenerateRoute,
               builder: (context, widget) {
                 ConnectevityController.instance.init();
                 return SafeArea(child: widget!);
