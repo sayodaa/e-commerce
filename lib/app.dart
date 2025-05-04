@@ -1,6 +1,7 @@
 import 'package:ecommerce/core/app/connectevity_controller.dart';
 import 'package:ecommerce/core/common/screens/no_network_screen.dart';
 import 'package:ecommerce/core/routes/app_routes.dart';
+import 'package:ecommerce/core/styles/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,6 +18,7 @@ class StoreApp extends StatelessWidget {
             designSize: const Size(375, 812),
             minTextAdapt: true,
             child: MaterialApp(
+              theme: themeLight(),
               debugShowCheckedModeBanner: false,
               initialRoute: AppRoutes.test1,
               onGenerateRoute: AppRoutes.onGenerateRoute,

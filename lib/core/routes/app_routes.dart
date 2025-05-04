@@ -9,7 +9,7 @@ class AppRoutes {
   static const String test2 = 'test2';
 
   static Route<void> onGenerateRoute(RouteSettings settings) {
-    final args = settings.arguments;
+    // final args = settings.arguments;
     switch (settings.name) {
       case test1:
         return BaseRoute(page: const Test1());

@@ -1,3 +1,5 @@
+import 'package:ecommerce/core/extensions/context_extension.dart';
+import 'package:ecommerce/core/styles/images/app_images.dart';
 import 'package:flutter/material.dart';
 
 class Test2 extends StatelessWidget {
@@ -8,7 +10,16 @@ class Test2 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Test2')),
       backgroundColor: Colors.pink,
-      body: const Center(child: Text('Test2')),
+      body: Container(
+            constraints: const BoxConstraints.expand(),
+            decoration: const BoxDecoration(
+              image: DecorationImage(image: AssetImage(AppImages.darkTest)),
+            ),
+            child: Text(
+              'go to test2',
+              style: TextStyle(color: context.color.mainColor),
+            ),
+          ),
     );
   }
 }
