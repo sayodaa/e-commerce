@@ -1,6 +1,7 @@
 import 'package:ecommerce/core/app/connectevity_controller.dart';
 import 'package:ecommerce/core/common/screens/no_network_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class StoreApp extends StatelessWidget {
   const StoreApp({super.key});
@@ -11,13 +12,17 @@ class StoreApp extends StatelessWidget {
       valueListenable: ConnectevityController.instance.isConnected,
       builder: (_, value, __) {
         if (value) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            home: const Center(child: Text('Store App')),
-            builder: (context, widget) {
-              ConnectevityController.instance.init();
-              return SafeArea(child: widget!);
-            },
+          return ScreenUtilInit(
+            designSize: const Size(375, 812),
+            minTextAdapt: true,
+            child: MaterialApp(
+              debugShowCheckedModeBanner: false,
+              home: const Center(child: Text('Store App')),
+              builder: (context, widget) {
+                ConnectevityController.instance.init();
+                return SafeArea(child: widget!);
+              },
+            ),
           );
         } else {
           return const MaterialApp(
