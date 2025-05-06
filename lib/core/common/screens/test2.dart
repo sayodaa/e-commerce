@@ -1,4 +1,5 @@
 import 'package:ecommerce/core/extensions/context_extension.dart';
+import 'package:ecommerce/core/language/lang_keys.dart';
 import 'package:ecommerce/core/styles/images/app_images.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class Test2 extends StatelessWidget {
               image: DecorationImage(image: AssetImage(AppImages.darkTest)),
             ),
             child: Text(
-              'go to test2',
+              context.translate(LangKeys.sayedStore),
               style: TextStyle(color: context.color.mainColor),
             ),
           ),

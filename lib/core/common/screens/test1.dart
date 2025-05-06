@@ -1,5 +1,6 @@
 import 'package:ecommerce/core/extensions/context_extension.dart';
-import 'package:ecommerce/core/routes/app_routes.dart';
+import 'package:ecommerce/core/language/lang_keys.dart';
+import 'package:ecommerce/core/routes/route_names.dart';
 import 'package:flutter/material.dart';
 
 class Test1 extends StatelessWidget {
@@ -21,12 +22,12 @@ class Test1 extends StatelessWidget {
               ),
             ),
             child: Text(
-              'go to test2',
+              context.translate(LangKeys.appName),
               style: TextStyle(color: context.color.mainColor),
             ),
           ),
           onTap: () {
-            context.pushNamed(AppRoutes.test2);
+            context.pushNamed(RouteNames.test2);
           },
         ),
       ),

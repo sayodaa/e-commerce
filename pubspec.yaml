@@ -33,6 +33,8 @@ dependencies:
   firebase_core: ^3.13.0
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   flutter_dotenv: ^5.2.1
   flutter_launcher_icons: ^0.14.3
   flutter_native_splash: ^2.4.6
@@ -65,6 +67,7 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  generate: true
   # To add assets to your application, add an assets section, like this:
   assets:
     - .env.dev
@@ -73,9 +76,10 @@ flutter:
     - assets/icons/
     - assets/fonts/arabic/cairo/
     - assets/fonts/english/poppins/
+    - lang/
 
   fonts:
-  #! Arabic fonts
+    #! Arabic fonts
     - family: Cairo
       fonts:
         - asset: assets/fonts/arabic/cairo/Cairo-Bold.ttf
@@ -93,5 +97,3 @@ flutter:
           weight: 500
         - asset: assets/fonts/english/poppins/Poppins-Regular.ttf
           weight: 400
-  
-
