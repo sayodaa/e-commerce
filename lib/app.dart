@@ -28,7 +28,7 @@ class StoreApp extends StatelessWidget {
                   AppLocalizationsSetup.localeResolutionCallback,
               theme: themeLight(),
               debugShowCheckedModeBanner: false,
-              initialRoute: RouteNames.test1,
+              initialRoute: RouteNames.login,
               onGenerateRoute: AppRoutes.onGenerateRoute,
               builder: (context, widget) {
                 ConnectevityController.instance.init();
