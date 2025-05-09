@@ -140,4 +140,70 @@ as bool,
 
 }
 
+/// @nodoc
+
+
+class ChangeLanguageState implements AppState {
+  const ChangeLanguageState({required this.locale});
+  
+
+ final  Locale locale;
+
+/// Create a copy of AppState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ChangeLanguageStateCopyWith<ChangeLanguageState> get copyWith => _$ChangeLanguageStateCopyWithImpl<ChangeLanguageState>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ChangeLanguageState&&(identical(other.locale, locale) || other.locale == locale));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,locale);
+
+@override
+String toString() {
+  return 'AppState.changeLanguage(locale: $locale)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $ChangeLanguageStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
+  factory $ChangeLanguageStateCopyWith(ChangeLanguageState value, $Res Function(ChangeLanguageState) _then) = _$ChangeLanguageStateCopyWithImpl;
+@useResult
+$Res call({
+ Locale locale
+});
+
+
+
+
+}
+/// @nodoc
+class _$ChangeLanguageStateCopyWithImpl<$Res>
+    implements $ChangeLanguageStateCopyWith<$Res> {
+  _$ChangeLanguageStateCopyWithImpl(this._self, this._then);
+
+  final ChangeLanguageState _self;
+  final $Res Function(ChangeLanguageState) _then;
+
+/// Create a copy of AppState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? locale = null,}) {
+  return _then(ChangeLanguageState(
+locale: null == locale ? _self.locale : locale // ignore: cast_nullable_to_non_nullable
+as Locale,
+  ));
+}
+
+
+}
+
 // dart format on

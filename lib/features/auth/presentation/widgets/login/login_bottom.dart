@@ -2,7 +2,6 @@ import 'package:ecommerce/core/common/animations/animated_do.dart';
 import 'package:ecommerce/core/common/widgets/custom_liner_button.dart';
 import 'package:ecommerce/core/common/widgets/text_app.dart';
 import 'package:ecommerce/core/extensions/context_extension.dart';
-import 'package:ecommerce/core/language/lang_keys.dart';
 import 'package:ecommerce/core/styles/fonts/font_weight_healper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
