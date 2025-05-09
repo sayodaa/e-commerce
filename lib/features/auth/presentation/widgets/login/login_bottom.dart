@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginBottom extends StatelessWidget {
-  const LoginBottom({super.key});
-
+  const LoginBottom({required this.text, super.key});
+  final String text;
   @override
   Widget build(BuildContext context) {
     return CustomFadeInRight(
@@ -19,7 +19,7 @@ class LoginBottom extends StatelessWidget {
         height: 55.h,
         onPressed: () {},
         child: TextApp(
-          text:context.transelate(LangKeys.login),
+          text:text,
           theme: context.textStyle.copyWith(
             color: Colors.white,
             fontSize: 18.sp,

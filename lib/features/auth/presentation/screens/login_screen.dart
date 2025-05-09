@@ -11,7 +11,7 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: SizedBox(
         width: MediaQuery.of(context).size.width,
-        height: 150.h,
+        height: 130.h,
         child: CustomPaint(painter: AuthCustomPainter()),
       ),
       body: const LoginBody(),

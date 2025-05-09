@@ -6,8 +6,8 @@ import 'package:ecommerce/core/util/app_regex.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginForm extends StatefulWidget {
-  const LoginForm({
+class SignUpTextForm extends StatefulWidget {
+  const SignUpTextForm({
     required this.emailcontroller,
     required this.passwordcontroller,
     super.key,
@@ -15,15 +15,29 @@ class LoginForm extends StatefulWidget {
   final TextEditingController emailcontroller;
   final TextEditingController passwordcontroller;
   @override
-  State<LoginForm> createState() => _LoginFormState();
+  State<SignUpTextForm> createState() => _SignUpTextFormState();
 }
 bool isSecured = true;
-class _LoginFormState extends State<LoginForm> {
+class _SignUpTextFormState extends State<SignUpTextForm> {
   @override
   Widget build(BuildContext context) {
     return Column(
       spacing: 15.h,
       children: [
+        CustomFadeInRight(
+          duration: 500,
+          child: CustomTextField(
+            controller: widget.emailcontroller,
+            hintText: context.transelate(LangKeys.fullName),
+            keyboardType: TextInputType.emailAddress,
+            validator: (value) {
+              if (!AppRegex.isEmailValid(widget.emailcontroller.text)) {
+                return context.transelate(LangKeys.validEmail);
+              }
+              return null;
+            },
+          ),
+        ),
         CustomFadeInRight(
           duration: 500,
           child: CustomTextField(
@@ -44,13 +58,13 @@ class _LoginFormState extends State<LoginForm> {
             obscureText: isSecured,
             controller: widget.passwordcontroller,
             suffixIcon: IconButton(
-              icon:isSecured? Icon(
-                Icons.visibility,
-                color:context.color.textColor,
-              ): Icon(
-                Icons.visibility_off,
-                color: context.color.textColor,
-              ),
+              icon:
+                  isSecured
+                      ? Icon(Icons.visibility, color: context.color.textColor)
+                      : Icon(
+                        Icons.visibility_off,
+                        color: context.color.textColor,
+                      ),
               onPressed: () {
                 setState(() {
                   isSecured = !isSecured;

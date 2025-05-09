@@ -1,4 +1,7 @@
+import 'package:ecommerce/features/auth/presentation/refactors/login_custom_paint.dart';
+import 'package:ecommerce/features/auth/presentation/refactors/sign_up_body.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -6,12 +9,12 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('SignUpScreen'),
+      bottomNavigationBar: SizedBox(
+        width: MediaQuery.of(context).size.width,
+        height: 130.h,
+        child: CustomPaint(painter: AuthCustomPainter()),
       ),
-      body: const Center(
-        child: Text('SignUpScreen'),
-      ),
+      body: const SignUpBody(),
     );
   }
 }
