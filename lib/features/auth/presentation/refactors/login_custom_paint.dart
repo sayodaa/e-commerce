@@ -1,11 +1,13 @@
-import 'package:ecommerce/core/styles/colors/colors_dark_mode.dart';
 import 'package:flutter/material.dart';
 
 class AuthCustomPainter extends CustomPainter {
+  AuthCustomPainter({required this.color, super.repaint});
+
+  final Color color;
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = ColorsDark.navBarDark
+      ..color = color
       ..style = PaintingStyle.fill;
 
     final path = Path()
