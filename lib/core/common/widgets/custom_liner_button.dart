@@ -18,7 +18,7 @@ class CustomLinearButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      splashColor: context.color.bluePinkLight!.withOpacity(0.3),
+      splashColor: context.color.bluePinkDark!.withOpacity(0.3),
       onTap: onPressed,
       child: Container(
         height: height ?? 44.h,

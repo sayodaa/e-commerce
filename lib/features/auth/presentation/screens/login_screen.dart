@@ -1,6 +1,7 @@
 import 'package:ecommerce/features/auth/presentation/refactors/login_body.dart';
 import 'package:ecommerce/features/auth/presentation/refactors/login_custom_paint.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -10,7 +11,7 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: SizedBox(
         width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height * 0.2,
+        height: 150.h,
         child: CustomPaint(painter: AuthCustomPainter()),
       ),
       body: const LoginBody(),

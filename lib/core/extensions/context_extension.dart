@@ -14,7 +14,7 @@ extension ContextExt on BuildContext {
   TextStyle get textStyle => Theme.of(this).textTheme.displaySmall!;
 
   //! Localization
-  String translate(String langKey) {
+  String transelate(String langKey) {
     final localizations = AppLocalizations.of(this);
     return localizations?.translate(langKey) ?? langKey;
   }

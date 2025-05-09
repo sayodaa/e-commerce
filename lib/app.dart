@@ -19,27 +19,30 @@ class StoreApp extends StatelessWidget {
           return ScreenUtilInit(
             designSize: const Size(375, 812),
             minTextAdapt: true,
-            child: MaterialApp(
-              locale: const Locale('ar'),
-              supportedLocales: AppLocalizationsSetup.supportedLocales,
-              localizationsDelegates:
-                  AppLocalizationsSetup.localizationsDelegates,
-              localeResolutionCallback:
-                  AppLocalizationsSetup.localeResolutionCallback,
-              theme: themeLight(),
-              debugShowCheckedModeBanner: false,
-              initialRoute: RouteNames.login,
-              onGenerateRoute: AppRoutes.onGenerateRoute,
-              builder: (context, widget) {
-                ConnectevityController.instance.init();
-                return GestureDetector(
-                  onTap: () {
-                    FocusManager.instance.primaryFocus?.unfocus();
-                  },
-                  child: Scaffold(body: widget),
-                );
-              },
-            ),
+            splitScreenMode: true,
+            builder: (_, __) {
+              return MaterialApp(
+                locale: const Locale('en'),
+                supportedLocales: AppLocalizationsSetup.supportedLocales,
+                localizationsDelegates:
+                    AppLocalizationsSetup.localizationsDelegates,
+                localeResolutionCallback:
+                    AppLocalizationsSetup.localeResolutionCallback,
+                theme: themeDark(), //! دلوقتي Safe لأن ScreenUtil متهيأ
+                debugShowCheckedModeBanner: false,
+                initialRoute: RouteNames.login,
+                onGenerateRoute: AppRoutes.onGenerateRoute,
+                builder: (context, widget) {
+                  ConnectevityController.instance.init();
+                  return GestureDetector(
+                    onTap: () {
+                      FocusManager.instance.primaryFocus?.unfocus();
+                    },
+                    child: Scaffold(body: widget),
+                  );
+                },
+              );
+            },
           );
         } else {
           return const MaterialApp(
